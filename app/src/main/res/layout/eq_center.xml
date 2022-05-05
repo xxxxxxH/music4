@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="330dp"
+    android:layout_weight="15"
+    android:layout_marginTop="40dp"
+    android:orientation="horizontal">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="330dp"
+        android:layout_weight="1"
+        android:layout_marginStart="18dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="+12db"
+            android:textColor="#585859"
+            android:textSize="8sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="0db"
+            android:textColor="#585859"
+            android:textSize="8sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:text="-12db"
+            android:textColor="#585859"
+            android:textSize="8sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="330dp"
+        android:layout_weight="14"
+        android:gravity="center">
+
+        <win.hapsunday.mplayer.widget.ISeek
+            android:id="@+id/seek1"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:max="100"
+            android:progress="30"
+            android:progressDrawable="@drawable/iseekbar"
+            android:thumb="@mipmap/eq3" />
+
+        <win.hapsunday.mplayer.widget.ISeek
+            android:id="@+id/seek2"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:max="100"
+            android:progress="30"
+            android:progressDrawable="@drawable/iseekbar"
+            android:thumb="@mipmap/eq3" />
+
+        <win.hapsunday.mplayer.widget.ISeek
+            android:id="@+id/seek3"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:max="100"
+            android:progress="30"
+            android:progressDrawable="@drawable/iseekbar"
+            android:thumb="@mipmap/eq3" />
+
+        <win.hapsunday.mplayer.widget.ISeek
+            android:id="@+id/seek4"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:max="100"
+            android:progress="30"
+            android:progressDrawable="@drawable/iseekbar"
+            android:thumb="@mipmap/eq3" />
+
+        <win.hapsunday.mplayer.widget.ISeek
+            android:id="@+id/seek5"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:max="100"
+            android:progress="30"
+            android:progressDrawable="@drawable/iseekbar"
+            android:thumb="@mipmap/eq3" />
+
+        <win.hapsunday.mplayer.widget.ISeek
+            android:id="@+id/seek6"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:max="100"
+            android:progress="30"
+            android:progressDrawable="@drawable/iseekbar"
+            android:thumb="@mipmap/eq3" />
+
+        <win.hapsunday.mplayer.widget.ISeek
+            android:id="@+id/seek7"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:max="100"
+            android:progress="30"
+            android:progressDrawable="@drawable/iseekbar"
+            android:thumb="@mipmap/eq3" />
+    </LinearLayout>
+
+</LinearLayout>

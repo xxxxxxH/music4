@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Sunday Music Player</string>
+
+
+
+    <string name="lovin_app_key">XPxZx2V96_iG7pvM4Tnv9Ci2gnTcttWt7PvgH4gkf-2zoyye4GosxpTV1dPNCvzgQPmf6oQpX9k-pQriMIx7HR</string>
+    <string name="lovin_insert_ad_id">63cf913371064fa8</string>
+    <string name="lovin_native_ad_id">c69fd5decb5679d6</string>
+    <string name="lovin_banner_ad_id">bd632b77980320c6</string>
+
+<!--    <string name="top_on_app_id">a62663e0766975</string>-->
+<!--    <string name="top_on_app_key">4f7b9ac17decb9babec83aac078742c7</string>-->
+<!--    <string name="top_on_open_ad_id">b62663e29367b4</string>-->
+    <string name="admob_id">ca-app-pub-3940256099942544~3347511713</string>
+
+<!--    test-->
+    <string name="top_on_app_id">a5aa1f9deda26d</string>
+    <string name="top_on_app_key">4f7b9ac17decb9babec83aac078742c7</string>
+    <string name="top_on_open_ad_id">b5ee8ae8611366</string>
+
+</resources>
