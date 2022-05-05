@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_alignParentBottom="true"
+    android:layout_marginBottom="50dp"
+    android:layout_height="120dp">
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:contentDescription="1"
+        android:onClick="click"
+        app:srcCompat="@mipmap/large_1"
+        android:layout_margin="10dp"/>
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:contentDescription="2"
+        app:srcCompat="@mipmap/large_2"
+        android:onClick="click"
+        android:layout_margin="10dp"/>
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:contentDescription="3"
+        android:onClick="click"
+        app:srcCompat="@mipmap/large_3"
+        android:layout_margin="10dp"/>
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        app:srcCompat="@mipmap/large_4"
+        android:contentDescription="4"
+        android:onClick="click"
+        android:layout_margin="10dp"/>
+</LinearLayout>

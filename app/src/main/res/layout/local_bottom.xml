@@ -7,11 +7,12 @@
     android:background="@mipmap/lo6">
 
     <ImageView
+        android:id="@+id/coverImage"
         android:layout_width="44dp"
         android:layout_height="44dp"
-        android:layout_marginStart="18dp"
         android:layout_centerVertical="true"
-        android:background="@mipmap/lo5"/>
+        android:layout_marginStart="18dp"
+        android:background="@mipmap/lo5" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -21,18 +22,18 @@
         android:layout_marginTop="14dp">
 
         <TextView
+            android:id="@+id/songName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="13sp"
-            android:textColor="#2F2F30"
-            android:text="Frankenstein-"/>
+            android:textColor="#2F2F30"/>
 
         <TextView
+            android:id="@+id/songAuthor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="9sp"
-            android:textColor="#BBBBBB"
-            android:text="Frankenstein-"/>
+            android:textColor="#BBBBBB"/>
     </LinearLayout>
 
     <LinearLayout
@@ -45,12 +46,14 @@
         android:layout_alignParentEnd="true">
 
         <ImageView
+            android:id="@+id/play"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:src="@mipmap/lo10"/>
 
         <ImageView
+            android:id="@+id/next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

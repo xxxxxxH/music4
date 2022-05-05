@@ -76,11 +76,11 @@ abstract class BasicPage(id: Int) : AppCompatActivity(id) {
         insertId = getString(R.string.lovin_insert_ad_id)
         nativeId = getString(R.string.lovin_native_ad_id)
         bannerId = getString(R.string.lovin_banner_ad_id)
-        openAd = BasicApp.instance!!.openAd(openId,openAdListener)
+        openAd = BasicApp.instance!!.openAd(openId, openAdListener)
         openAd!!.loadAd()
         openAd.printMsg()
 
-        insertAd = BasicApp.instance!!.insertAd(insertId,this)
+        insertAd = BasicApp.instance!!.insertAd(insertId, this)
         insertAd!!.setListener(insertAdListener)
         insertAd!!.loadAd()
         insertAd.printMsg()
@@ -108,7 +108,7 @@ abstract class BasicPage(id: Int) : AppCompatActivity(id) {
         lifecycleScope.launch(Dispatchers.IO) {
             insertAd?.destroy()
             delay(3500)
-            insertAd = BasicApp.instance!!.insertAd(insertId,this@BasicPage)
+            insertAd = BasicApp.instance!!.insertAd(insertId, this@BasicPage)
             insertAd!!.setListener(insertAdListener)
             insertAd!!.loadAd()
         }
@@ -178,18 +178,12 @@ abstract class BasicPage(id: Int) : AppCompatActivity(id) {
         }
     }
 
-    fun showOpenAd(itt: ViewGroup,isForce: Boolean = false) :Boolean{
-        if (configModel.isOpenAdReplacedByInsertAd()) {
+    fun showOpenAd(itt: ViewGroup, isForce: Boolean = false): Boolean {
+        return if (configModel.isOpenAdReplacedByInsertAd()) {
             showInsertAd(isForce = isForce)
         } else {
-            openAd?.let {
-                if (it.isAdReady) {
-                    it.show(this, itt)
-                    return true
-                }
-            }
+            showOpenAdImpl(itt)
         }
-        return false
     }
 
 
@@ -197,32 +191,47 @@ abstract class BasicPage(id: Int) : AppCompatActivity(id) {
         showByPercent: Boolean = false,
         isForce: Boolean = false,
         tag: String = ""
-    ) {
+    ): Boolean {
         if (isForce) {
-            insertAd?.let {
-                if (it.isReady) {
-                    it.showAd(tag)
-                }
-            }
+            return showInsertAdImpl()
         } else {
             if (configModel.isCanShowInsertAd()) {
                 if ((showByPercent && configModel.isCanShowByPercent()) || (!showByPercent)) {
                     if (System.currentTimeMillis() - adLastTime > configModel.insertAdOffset() * 1000) {
+                        var s = false
                         if (adShownList.getOrNull(adShownIndex) == true) {
-                            insertAd?.let {
-                                if (it.isReady) {
-                                    it.showAd(tag)
-                                }
-                            }
+                            s = showInsertAdImpl(tag)
                         }
                         adShownIndex++
                         if (adShownIndex >= adShownList.size) {
                             adShownIndex = 0
                         }
+                        return s
                     }
                 }
             }
+            return false
         }
+    }
+
+    private fun showInsertAdImpl(tag: String = ""): Boolean {
+        insertAd?.let {
+            if (it.isReady) {
+                it.showAd(tag)
+                return true
+            }
+        }
+        return false
+    }
+
+    fun showOpenAdImpl(viewGroup: ViewGroup, tag: String = ""): Boolean {
+        openAd?.let {
+            if (it.isAdReady) {
+                it.show(this, viewGroup)
+                return true
+            }
+        }
+        return false
     }
 
     fun showNativeAd(show: (MaxNativeAdView?) -> Unit) {

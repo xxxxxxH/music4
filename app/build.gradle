@@ -76,10 +76,10 @@ dependencies {
     implementation 'com.tencent:mmkv-static:1.2.10'
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
     implementation "com.github.bumptech.glide:glide:4.13.0"
-    implementation 'com.lzy.net:okgo:3.0.4'
     implementation 'com.squareup.okhttp3:logging-interceptor:4.9.2'
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation 'org.xutils:xutils:3.9.0'
     implementation 'com.allattentionhere:fabulousfilter:0.0.5'
+    implementation 'net.idik:slimadapter:2.1.2'
 
 }

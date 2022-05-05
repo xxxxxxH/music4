@@ -12,17 +12,17 @@ class IndexPage : BasicPage(R.layout.index_layout) {
         per {
             if (it) {
                 getConfig({
-//                    if (isLogin) {
-//                        showOpenAd(root, isForce = true)
+                    if (isLogin) {
+                        showOpenAd(root, isForce = true)
+                        return@getConfig
+                    }
+//                    if (configModel.needLogin()){
+//                        login.visibility = View.VISIBLE
 //                        return@getConfig
 //                    }
-////                    if (configModel.needLogin()){
-////                        login.visibility = View.VISIBLE
-////                        return@getConfig
-////                    }
-//                    showOpen()
+                    showOpen()
                 }, {
-//                    showOpen()
+                    showOpen()
                 })
             } else {
 
@@ -36,25 +36,25 @@ class IndexPage : BasicPage(R.layout.index_layout) {
             showMax = true
             return
         }
-//        next(MainPage::class.java, true)
+        next(MainPage::class.java, true)
     }
 
     override fun onInterstitialAdHidden() {
         super.onInterstitialAdHidden()
-//        if (configModel.isOpenAdReplacedByInsertAd()) {
-//            if (showMax){
-//                showMax = !showMax
-//                next(MainPage::class.java, true)
-//            }
-//
-//        }
+        if (configModel.isOpenAdReplacedByInsertAd()) {
+            if (showMax){
+                showMax = !showMax
+                next(MainPage::class.java, true)
+            }
+
+        }
     }
 
     override fun onSplashAdHidden() {
         super.onSplashAdHidden()
-//        if (showMax){
-//            showMax = !showMax
-//            next(MainPage::class.java, true)
-//        }
+        if (showMax){
+            showMax = !showMax
+            next(MainPage::class.java, true)
+        }
     }
 }

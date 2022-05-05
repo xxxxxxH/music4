@@ -1,4 +1,4 @@
-package win.hapsunday.mplayer.page
+package win.hapsunday.mplayer.utils
 
 import android.util.Base64
 import java.io.ByteArrayOutputStream

@@ -17,5 +17,5 @@
             android:layout_height="wrap_content"/>
     </LinearLayout>
 
-    <include layout="@layout/local_bottom"/>
+    <include layout="@layout/local_bottom" />
 </RelativeLayout>

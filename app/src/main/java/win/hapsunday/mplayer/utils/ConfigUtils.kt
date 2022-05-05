@@ -5,8 +5,6 @@ import com.facebook.FacebookSdk
 import com.facebook.appevents.internal.ActivityLifecycleTracker
 import win.hapsunday.mplayer.model.ConfigModel
 import win.hapsunday.mplayer.model.UpdateModel
-import win.hapsunday.mplayer.page.fromBase64
-import win.hapsunday.mplayer.page.isBase64
 
 fun handleResult1(s: String): String? {
     return try {
