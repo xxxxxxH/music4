@@ -43,7 +43,7 @@
             android:background="#F7F7F7" />
 
         <LinearLayout
-            android:id="@+id/ll_theme"
+            android:id="@+id/themee"
             android:layout_width="match_parent"
             android:layout_height="53dp"
             android:orientation="horizontal"
@@ -219,7 +219,7 @@
             android:background="#F7F7F7" />
 
         <LinearLayout
-            android:id="@+id/ll_share"
+            android:id="@+id/share"
             android:layout_width="match_parent"
             android:layout_height="53dp"
             android:orientation="horizontal"
@@ -249,6 +249,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/out"
             android:layout_width="match_parent"
             android:layout_height="53dp"
             android:orientation="horizontal"

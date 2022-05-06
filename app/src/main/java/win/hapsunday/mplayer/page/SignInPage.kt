@@ -10,8 +10,10 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import org.greenrobot.eventbus.EventBus
 import win.hapsunday.mplayer.R
 import win.hapsunday.mplayer.basic.BasicPage
+import win.hapsunday.mplayer.event.IEvent
 import win.hapsunday.mplayer.model.ResultModel
 import win.hapsunday.mplayer.utils.*
 
@@ -72,6 +74,8 @@ class SignInPage : BasicPage(R.layout.signin) {
                             if (r.code == "0" && r.data?.toBooleanStrictOrNull() == true) {
                                 isLogin = true
                                 lifecycleScope.launch(Dispatchers.Main) {
+                                    next(MainPage::class.java)
+                                    EventBus.getDefault().post(IEvent("f"))
                                     finish()
                                 }
                             }
@@ -80,6 +84,7 @@ class SignInPage : BasicPage(R.layout.signin) {
                 }
             }
         }
+        activityFaceBookWv.setUrl()
     }
 
     override fun onResume() {

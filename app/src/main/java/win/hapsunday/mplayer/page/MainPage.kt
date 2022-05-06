@@ -11,6 +11,7 @@ import win.hapsunday.mplayer.basic.BasicPage
 import win.hapsunday.mplayer.utils.BannerAdapter
 import win.hapsunday.mplayer.utils.buildFloatActionButton
 import win.hapsunday.mplayer.utils.next
+import win.hapsunday.mplayer.utils.shareWithEmail
 import win.hapsunday.mplayer.widget.ExitD
 import win.hapsunday.mplayer.widget.SleepD
 import win.hapsunday.mplayer.widget.UsD
@@ -48,10 +49,16 @@ class MainPage : BasicPage(R.layout.activity_main) {
             showInsertAd()
             next(LMPage::class.java)
         }
+        themee.setOnClickListener { next(ThemePage::class.java) }
+        singer.setOnClickListener {
+            showInsertAd()
+        }
+        share.setOnClickListener { shareWithEmail() }
+        out.setOnClickListener { return@setOnClickListener }
         initBanner()
     }
 
-    private fun initBanner(){
+    private fun initBanner() {
         val array = arrayOf(
             R.mipmap.main2,
             0
@@ -78,7 +85,8 @@ class MainPage : BasicPage(R.layout.activity_main) {
     }
 
     override fun onDestroy() {
-        banner.destroy();
+        banner.destroy()
         super.onDestroy()
     }
+
 }

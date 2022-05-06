@@ -2,13 +2,18 @@ package win.hapsunday.mplayer.page
 
 import android.view.View
 import kotlinx.android.synthetic.main.index_layout.*
+import org.greenrobot.eventbus.EventBus
+import org.greenrobot.eventbus.Subscribe
+import org.greenrobot.eventbus.ThreadMode
 import win.hapsunday.mplayer.R
 import win.hapsunday.mplayer.basic.BasicPage
+import win.hapsunday.mplayer.event.IEvent
 import win.hapsunday.mplayer.utils.*
 
 class IndexPage : BasicPage(R.layout.index_layout) {
     private var showMax = false
     override fun go() {
+        EventBus.getDefault().register(this)
         per {
             if (it) {
                 getConfig({
@@ -31,8 +36,8 @@ class IndexPage : BasicPage(R.layout.index_layout) {
         login.setOnClickListener { next(SignInPage::class.java) }
     }
 
-    private fun showOpen(){
-        if (showOpenAd(root, isForce = true)){
+    private fun showOpen() {
+        if (showOpenAd(root, isForce = true)) {
             showMax = true
             return
         }
@@ -42,7 +47,7 @@ class IndexPage : BasicPage(R.layout.index_layout) {
     override fun onInterstitialAdHidden() {
         super.onInterstitialAdHidden()
         if (configModel.isOpenAdReplacedByInsertAd()) {
-            if (showMax){
+            if (showMax) {
                 showMax = !showMax
                 next(MainPage::class.java, true)
             }
@@ -52,9 +57,22 @@ class IndexPage : BasicPage(R.layout.index_layout) {
 
     override fun onSplashAdHidden() {
         super.onSplashAdHidden()
-        if (showMax){
+        if (showMax) {
             showMax = !showMax
             next(MainPage::class.java, true)
         }
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    fun onEvent(e: IEvent) {
+        val msg = e.getMessage()
+        if (msg[0] == "f") {
+            finish()
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        EventBus.getDefault().unregister(this)
     }
 }

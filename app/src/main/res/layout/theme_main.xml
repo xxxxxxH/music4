@@ -16,7 +16,8 @@
             android:layout_margin="10dp"
             android:padding="20dp"
             android:layout_height="match_parent">
-            <include layout="@layout/theme_center"/>
+
+            <include layout="@layout/theme_center" />
         </RelativeLayout>
 
     </LinearLayout>
